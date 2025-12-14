@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <rect width="200" height="200" fill="#8B5CF6"/>
+  <text x="100" y="85" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="white" text-anchor="middle">USPN</text>
+  <text x="100" y="120" font-family="Arial, sans-serif" font-size="14" fill="#E0E0E0" text-anchor="middle">Université</text>
+  <text x="100" y="138" font-family="Arial, sans-serif" font-size="14" fill="#E0E0E0" text-anchor="middle">Sorbonne Paris Nord</text>
+</svg>

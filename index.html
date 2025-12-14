@@ -692,6 +692,46 @@
             color: var(--primary-purple);
         }
 
+        .skill-card .skill-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+            transition: all 0.4s ease;
+        }
+
+        .skill-card:hover .skill-image {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        .quality-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--primary-purple), var(--accent-cyan));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
+            transition: all 0.4s ease;
+        }
+
+        .skill-card:hover .quality-icon {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
+        }
+
+        .skill-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
         .skill-card ul {
             list-style: none;
         }
@@ -770,12 +810,13 @@
         }
 
         .timeline-item h3 .logo {
-            width: 50px;
-            height: 50px;
-            object-fit: contain;
-            border-radius: 8px;
-            background: rgba(139, 92, 246, 0.1);
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 12px;
+            background: white;
             padding: 0.5rem;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.2);
         }
 
         .timeline-item:hover h3 {
@@ -917,6 +958,70 @@
             box-shadow: 0 0 30px rgba(139, 92, 246, 0.6),
                 0 5px 25px rgba(139, 92, 246, 0.4);
             transform: scale(1.1) translateY(-5px);
+            cursor: pointer;
+        }
+
+        /* ===== MODALE CERTIFICATION ===== */
+        .cert-modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .cert-modal.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cert-modal-content {
+            position: relative;
+            max-width: 70%;
+            max-height: 85vh;
+            animation: zoomIn 0.3s ease;
+        }
+
+        .cert-modal-content img {
+            width: 100%;
+            height: auto;
+            max-height: 85vh;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 0 50px rgba(139, 92, 246, 0.5);
+        }
+
+        .cert-modal-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .cert-modal-close:hover {
+            color: var(--primary-purple);
+            transform: scale(1.2);
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
 
         /* ===== CONTACT ===== */
@@ -1155,6 +1260,27 @@
                 align-items: flex-start;
             }
 
+            .certifications {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .cert-badge {
+                width: 100%;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .cert-modal-content {
+                max-width: 95%;
+                max-height: 85%;
+            }
+
+            .cert-modal-close {
+                top: -35px;
+                font-size: 35px;
+            }
+
             .contact-item {
                 font-size: 1rem;
             }
@@ -1222,8 +1348,19 @@
             }
 
             .cert-badge {
-                padding: 0.8rem 1.5rem;
-                font-size: 0.9rem;
+                padding: 0.8rem 1.2rem;
+                font-size: 0.85rem;
+                white-space: normal;
+                text-align: center;
+            }
+
+            .cert-modal-content {
+                max-width: 98%;
+            }
+
+            .cert-modal-close {
+                top: -30px;
+                font-size: 30px;
             }
 
             .contact-item {
@@ -1382,6 +1519,7 @@
         <h2>Compétences Techniques</h2>
         <div class="skills-grid">
             <div class="skill-card fade-in">
+                <img src="images/ressec.jpg" alt="Réseaux & Sécurité" class="skill-image">
                 <h3><i class="fas fa-network-wired"></i> Réseaux & Sécurité</h3>
                 <ul>
                     <li>Firewalls (Fortinet, Cisco)</li>
@@ -1392,6 +1530,7 @@
                 </ul>
             </div>
             <div class="skill-card fade-in">
+                <img src="images/sysvir.jpg" alt="Systèmes & Virtualisation" class="skill-image">
                 <h3><i class="fas fa-server"></i> Systèmes & Virtualisation</h3>
                 <ul>
                     <li>Linux</li>
@@ -1402,6 +1541,7 @@
                 </ul>
             </div>
             <div class="skill-card fade-in">
+                <img src="images/dev.jpg" alt="Programmation" class="skill-image">
                 <h3><i class="fas fa-code"></i> Programmation</h3>
                 <ul>
                     <li>Python</li>
@@ -1414,17 +1554,51 @@
         </div>
     </section>
 
+    <!-- MES QUALITÉS -->
+    <section id="qualites">
+        <h2>Mes Qualités</h2>
+        <div class="skills-grid">
+            <div class="skill-card fade-in">
+                <div class="quality-icon">
+                    <i class="fas fa-sync-alt"></i>
+                </div>
+                <h3>Adaptabilité</h3>
+                <p>Capacité à m'adapter rapidement aux nouvelles technologies et environnements de travail, tout en maintenant une performance optimale.</p>
+            </div>
+            <div class="skill-card fade-in">
+                <div class="quality-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Travail en Groupe</h3>
+                <p>Excellente collaboration au sein d'équipes multidisciplinaires, communication efficace et contribution active aux objectifs communs.</p>
+            </div>
+            <div class="skill-card fade-in">
+                <div class="quality-icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <h3>Détermination</h3>
+                <p>Persévérance face aux défis techniques, engagement total dans la réussite des projets et dépassement des objectifs fixés.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- FORMATION -->
     <section id="formation">
         <h2>Formation</h2>
         <div class="timeline-item">
-            <h3>BUT Réseaux et Télécommunications, Parcours Cybersécurité</h3>
+            <h3>
+                <img src="images/uspn.jpg" alt="Logo USPN" class="logo">
+                BUT Réseaux et Télécommunications, Parcours Cybersécurité
+            </h3>
             <span class="date">2025-2026</span>
             <p class="location">Université Sorbonne Paris Nord - IUT de Villetaneuse</p>
             <p>Co-diplomation avec l'Institut Supérieur d'Informatique (ISI) - Double formation France-Tunisie</p>
         </div>
         <div class="timeline-item">
-            <h3>Licence en Ingénierie Réseaux et Systèmes</h3>
+            <h3>
+                <img src="images/isi-1.jpg" alt="Logo ISI" class="logo">
+                Licence en Ingénierie Réseaux et Systèmes
+            </h3>
             <span class="date">2023-2025</span>
             <p class="location">Institut Supérieur d'Informatique (ISI), Tunisie</p>
             <ul>
@@ -1433,9 +1607,18 @@
                 <li>Maîtrise de Cisco Packet Tracer pour simulation de topologies réseau</li>
             </ul>
         </div>
+        <div class="timeline-item">
+            <h3>
+                <img src="images/lpm8.jpg" alt="Logo Lycée Pilote" class="logo">
+                Baccalauréat Mathématiques
+            </h3>
+            <span class="date">2023</span>
+            <p class="location">Lycée Pilote Menzah 8, Tunisie</p>
+            <p>Diplôme du baccalauréat section Mathématiques avec mention</p>
+        </div>
     </section>
 
-    <!-- PROJETS -->
+    <!-- PROJETS ACADÉMIQUES -->
     <section id="projects">
         <h2>Projets Académiques</h2>
         <div class="projects-grid">
@@ -1445,6 +1628,25 @@
                     des signes et l'IA</p>
                 <p><strong>Technologies:</strong> Architecture full-stack, Intelligence Artificielle</p>
             </div>
+            <div class="project-card fade-in">
+                <h3><i class="fas fa-project-diagram"></i> SAE: Piloter un projet informatique</h3>
+                <p>Conception et déploiement d'une architecture réseau complète avec segmentation et services centralisés</p>
+                <p><strong>Technologies:</strong> Cisco Packet Tracer, VLANs, Serveur DHCP, Serveur DNS, Serveur Syslog</p>
+                <a href="https://github.com/aliyamaatit/SAE_R502_SANO" target="_blank" class="btn btn-secondary" style="margin-top: 1rem;"><i class="fab fa-github"></i> Voir le projet</a>
+            </div>
+            <div class="project-card fade-in">
+                <h3><i class="fas fa-virus"></i> Analyse de Malware en Environnement Virtualisé</h3>
+                <p>Observation et analyse du comportement d'un malware dans une machine virtuelle Windows isolée</p>
+                <p><strong>Contexte:</strong> Supervision de la Sécurité - Techniques d'analyse forensique et de détection de menaces</p>
+                <a href="resume/TP 3 Analyse du Malware.pdf.pdf" target="_blank" class="btn btn-secondary" style="margin-top: 1rem;"><i class="fas fa-file-pdf"></i> Voir le compte rendu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJETS PROFESSIONNELS -->
+    <section id="professional-projects">
+        <h2>Projets Professionnels</h2>
+        <div class="projects-grid">
             <div class="project-card fade-in">
                 <h3><i class="fas fa-fire-flame-curved"></i> Étude Comparative des Firewalls</h3>
                 <p>Analyse approfondie des firewalls Fortinet, Cisco, Sophos, Huawei et Palo Alto</p>
@@ -1488,12 +1690,20 @@
     <section id="certifications">
         <h2>Certifications</h2>
         <div class="certifications">
-            <div class="cert-badge"><i class="fas fa-certificate"></i> Fortinet Certified Fundamentals in Cybersecurity
+            <div class="cert-badge" onclick="openCertModal('images/FCF.jpg')"><i class="fas fa-certificate"></i> Fortinet Certified Fundamentals in Cybersecurity
             </div>
-            <div class="cert-badge"><i class="fas fa-shield-halved"></i> Introduction to the Threat Landscape 3.0</div>
-            <div class="cert-badge"><i class="fas fa-user-shield"></i> Getting Started in Cybersecurity</div>
+            <div class="cert-badge" onclick="openCertModal('images/ITL.jpg')"><i class="fas fa-shield-halved"></i> Introduction to the Threat Landscape 3.0</div>
+            <div class="cert-badge" onclick="openCertModal('images/GSC.jpg')"><i class="fas fa-user-shield"></i> Getting Started in Cybersecurity</div>
         </div>
     </section>
+
+    <!-- MODALE CERTIFICATION -->
+    <div id="certModal" class="cert-modal" onclick="closeCertModal()">
+        <div class="cert-modal-content" onclick="event.stopPropagation()">
+            <span class="cert-modal-close" onclick="closeCertModal()">&times;</span>
+            <img id="certImage" src="" alt="Certification">
+        </div>
+    </div>
 
     <!-- ENGAGEMENT -->
     <section>
@@ -1522,6 +1732,81 @@
             </h3>
             <span class="date">6 semaines | Bursa, Turquie</span>
             <p>Enseignement de l'anglais aux enfants. Immersion culturelle et perfectionnement de la langue turque.</p>
+        </div>
+    </section>
+
+    <!-- PASSIONS -->
+    <section id="passions">
+        <h2>Passions & Loisirs</h2>
+        <div class="projects-grid">
+            <div class="project-card fade-in">
+                <svg class="skill-image" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="patissGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#f472b6;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#ec4899;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <rect width="400" height="200" fill="url(#patissGrad)"/>
+                    <ellipse cx="200" cy="140" rx="80" ry="30" fill="#fef3c7"/>
+                    <rect x="150" y="80" width="100" height="60" rx="10" fill="#fbbf24"/>
+                    <rect x="160" y="70" width="80" height="10" fill="#f59e0b"/>
+                    <ellipse cx="200" cy="55" rx="50" ry="20" fill="#fca5a5"/>
+                    <circle cx="185" cy="50" r="8" fill="#dc2626"/>
+                    <circle cx="200" cy="45" r="8" fill="#dc2626"/>
+                    <circle cx="215" cy="50" r="8" fill="#dc2626"/>
+                    <path d="M 170 90 Q 200 70 230 90" stroke="#fef3c7" stroke-width="3" fill="none"/>
+                    <text x="200" y="185" font-family="Arial" font-size="20" fill="white" text-anchor="middle" font-weight="bold">PÂTISSERIE</text>
+                </svg>
+                <h3><i class="fas fa-cake-candles"></i> Pâtisserie</h3>
+                <p>Passionnée par l'art de la pâtisserie, je crée des desserts et gâteaux pour mes proches. Une activité qui me permet d'exprimer ma créativité et de partager des moments gourmands.</p>
+            </div>
+            <div class="project-card fade-in">
+                <svg class="skill-image" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="bookGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#7c3aed;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <rect width="400" height="200" fill="url(#bookGrad)"/>
+                    <rect x="120" y="50" width="160" height="120" rx="5" fill="#8b4513"/>
+                    <rect x="130" y="60" width="140" height="100" fill="#fef3c7"/>
+                    <line x1="145" y1="80" x2="255" y2="80" stroke="#a855f7" stroke-width="2"/>
+                    <line x1="145" y1="95" x2="255" y2="95" stroke="#7c3aed" stroke-width="2"/>
+                    <line x1="145" y1="110" x2="255" y2="110" stroke="#a855f7" stroke-width="2"/>
+                    <line x1="145" y1="125" x2="240" y2="125" stroke="#7c3aed" stroke-width="2"/>
+                    <line x1="145" y1="140" x2="255" y2="140" stroke="#a855f7" stroke-width="2"/>
+                    <rect x="115" y="55" width="15" height="110" fill="#6b3410"/>
+                    <text x="200" y="190" font-family="Arial" font-size="20" fill="white" text-anchor="middle" font-weight="bold">LECTURE</text>
+                </svg>
+                <h3><i class="fas fa-book"></i> Lecture</h3>
+                <p>Grande amatrice de lecture, j'explore différents genres littéraires. La lecture me permet de m'évader, d'apprendre et d'élargir mes perspectives sur le monde.</p>
+            </div>
+            <div class="project-card fade-in">
+                <svg class="skill-image" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="groupGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#0891b2;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <rect width="400" height="200" fill="url(#groupGrad)"/>
+                    <circle cx="150" cy="90" r="25" fill="#8B5CF6"/>
+                    <circle cx="150" cy="90" r="15" fill="#fff"/>
+                    <path d="M 150 105 Q 130 125 140 140 L 160 140 Q 170 125 150 105" fill="#8B5CF6"/>
+                    <circle cx="250" cy="90" r="25" fill="#A78BFA"/>
+                    <circle cx="250" cy="90" r="15" fill="#fff"/>
+                    <path d="M 250 105 Q 230 125 240 140 L 260 140 Q 270 125 250 105" fill="#A78BFA"/>
+                    <circle cx="200" cy="70" r="25" fill="#ec4899"/>
+                    <circle cx="200" cy="70" r="15" fill="#fff"/>
+                    <path d="M 200 85 Q 180 105 190 120 L 210 120 Q 220 105 200 85" fill="#ec4899"/>
+                    <path d="M 175 115 Q 200 135 225 115" stroke="#fbbf24" stroke-width="4" fill="none" stroke-linecap="round"/>
+                    <text x="200" y="185" font-family="Arial" font-size="18" fill="white" text-anchor="middle" font-weight="bold">SORTIES EN GROUPE</text>
+                </svg>
+                <h3><i class="fas fa-users"></i> Sorties en Groupe</h3>
+                <p>J'apprécie particulièrement les moments partagés avec mes amis lors de sorties, qu'il s'agisse de découvertes culturelles, de restaurants ou de simples balades. Ces moments renforcent les liens et créent de beaux souvenirs.</p>
+            </div>
         </div>
     </section>
 
@@ -1631,6 +1916,28 @@
                     });
                 }
             });
+        });
+
+        // Fonctions pour la modale de certification
+        function openCertModal(imageSrc) {
+            const modal = document.getElementById('certModal');
+            const certImage = document.getElementById('certImage');
+            certImage.src = imageSrc;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Empêcher le scroll
+        }
+
+        function closeCertModal() {
+            const modal = document.getElementById('certModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Réactiver le scroll
+        }
+
+        // Fermer la modale avec la touche Échap
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeCertModal();
+            }
         });
     </script>
 </body>

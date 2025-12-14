@@ -1,0 +1,86 @@
+BEGIN:VCALENDAR
+METHOD:REQUEST
+PRODID:Microsoft Exchange Server 2010
+VERSION:2.0
+BEGIN:VTIMEZONE
+TZID:Romance Standard Time
+BEGIN:STANDARD
+DTSTART:16010101T030000
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+RRULE:FREQ=YEARLY;INTERVAL=1;BYDAY=-1SU;BYMONTH=10
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:16010101T020000
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+RRULE:FREQ=YEARLY;INTERVAL=1;BYDAY=-1SU;BYMONTH=3
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VEVENT
+ORGANIZER;CN=Nahida FERDOUS:mailto:nahida@rouxinformatique.fr
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=zri.mima@g
+ mail.com:mailto:zri.mima@gmail.com
+ATTACH:CID:1C4C62F51B5EB64B9288C3ACDA8F78C9@FRAP264.PROD.OUTLOOK.COM
+DESCRIPTION;LANGUAGE=fr-FR:\n\n\n__________________________________________
+ ______________________________________\nMicrosoft Teams Besoin d'aide ?<ht
+ tps://aka.ms/JoinTeamsMeeting?omkt=fr-FR>\nRejoindre la réunion maintenan
+ t<https://teams.microsoft.com/l/meetup-join/19%3ameeting_ZTllZDk5NjQtODAwZ
+ S00MzI2LThjNzMtZWQyNjdiNjZiNDE1%40thread.v2/0?context=%7b%22Tid%22%3a%2262
+ 856d46-60dc-4442-924a-67be32c43a60%22%2c%22Oid%22%3a%2288fd5a50-0a1a-44f2-
+ b326-3ecc38e3f8ac%22%7d>\nNuméro de réunion : 333 768 012 197 13\nCode s
+ ecret : FV6iY78o\n________________________________\nPour les organisateurs
+  : Options de réunion<https://teams.microsoft.com/meetingOptions/?organiz
+ erId=88fd5a50-0a1a-44f2-b326-3ecc38e3f8ac&tenantId=62856d46-60dc-4442-924a
+ -67be32c43a60&threadId=19_meeting_ZTllZDk5NjQtODAwZS00MzI2LThjNzMtZWQyNjdi
+ NjZiNDE1@thread.v2&messageId=0&language=fr-FR>\n__________________________
+ ______________________________________________________\n
+UID:040000008200E00074C5B7101A82E0080000000014AAF1362968DC01000000000000000
+ 0100000005E5995848FE1654A9E1EFFCE840B4BC6
+SUMMARY;LANGUAGE=fr-FR:Entretien Salima
+DTSTART;TZID=Romance Standard Time:20251210T143000
+DTEND;TZID=Romance Standard Time:20251210T150000
+CLASS:PUBLIC
+PRIORITY:5
+DTSTAMP:20251208T142751Z
+TRANSP:OPAQUE
+STATUS:CONFIRMED
+SEQUENCE:1
+LOCATION;LANGUAGE=fr-FR:Réunion Microsoft Teams
+X-MICROSOFT-CDO-APPT-SEQUENCE:1
+X-MICROSOFT-CDO-OWNERAPPTID:2124170101
+X-MICROSOFT-CDO-BUSYSTATUS:TENTATIVE
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+X-MICROSOFT-CDO-ALLDAYEVENT:FALSE
+X-MICROSOFT-CDO-IMPORTANCE:1
+X-MICROSOFT-CDO-INSTTYPE:0
+X-MICROSOFT-ONLINEMEETINGINFORMATION:{"OnlineMeetingChannelId":null\,"Onlin
+ eMeetingProvider":3}
+X-MICROSOFT-SKYPETEAMSMEETINGURL:https://teams.microsoft.com/l/meetup-join/
+ 19%3ameeting_ZTllZDk5NjQtODAwZS00MzI2LThjNzMtZWQyNjdiNjZiNDE1%40thread.v2/
+ 0?context=%7b%22Tid%22%3a%2262856d46-60dc-4442-924a-67be32c43a60%22%2c%22O
+ id%22%3a%2288fd5a50-0a1a-44f2-b326-3ecc38e3f8ac%22%7d
+X-MICROSOFT-SCHEDULINGSERVICEUPDATEURL:https://api.scheduler.teams.microsof
+ t.com/teams/62856d46-60dc-4442-924a-67be32c43a60/88fd5a50-0a1a-44f2-b326-3
+ ecc38e3f8ac/19_meeting_ZTllZDk5NjQtODAwZS00MzI2LThjNzMtZWQyNjdiNjZiNDE1@th
+ read.v2/0
+X-MICROSOFT-SKYPETEAMSPROPERTIES:{"cid":"19:meeting_ZTllZDk5NjQtODAwZS00MzI
+ 2LThjNzMtZWQyNjdiNjZiNDE1@thread.v2"\,"rid":0\,"mid":0\,"uid":null\,"priva
+ te":true\,"type":0\,"ct":null\,"btid":null}
+X-MICROSOFT-DONOTFORWARDMEETING:FALSE
+X-MICROSOFT-DISALLOW-COUNTER:FALSE
+X-MICROSOFT-REQUESTEDATTENDANCEMODE:DEFAULT
+X-MICROSOFT-ISRESPONSEREQUESTED:TRUE
+X-MICROSOFT-LOCATIONDISPLAYNAME:Réunion Microsoft Teams
+X-MICROSOFT-LOCATIONSOURCE:None
+X-MICROSOFT-LOCATIONS:[{"DisplayName":"Réunion Microsoft Teams"\,"Location
+ Annotation":""\,"LocationUri":""\,"LocationStreet":""\,"LocationCity":""\,
+ "LocationState":""\,"LocationCountry":""\,"LocationPostalCode":""\,"Locati
+ onFullAddress":""}]
+BEGIN:VALARM
+DESCRIPTION:REMINDER
+TRIGGER;RELATED=START:-PT15M
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR
