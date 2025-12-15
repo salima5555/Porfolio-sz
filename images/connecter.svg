@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="nodeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0891b2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#bgGrad)"/>
+  
+  <!-- Connection lines (animated) -->
+  <line x1="150" y1="200" x2="400" y2="300" stroke="#ffffff" stroke-width="3" opacity="0.3">
+    <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2s" repeatCount="indefinite"/>
+  </line>
+  <line x1="650" y1="200" x2="400" y2="300" stroke="#ffffff" stroke-width="3" opacity="0.3">
+    <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+  </line>
+  <line x1="150" y1="400" x2="400" y2="300" stroke="#ffffff" stroke-width="3" opacity="0.3">
+    <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2s" begin="1s" repeatCount="indefinite"/>
+  </line>
+  <line x1="650" y1="400" x2="400" y2="300" stroke="#ffffff" stroke-width="3" opacity="0.3">
+    <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2s" begin="1.5s" repeatCount="indefinite"/>
+  </line>
+  
+  <!-- Central server/hub -->
+  <circle cx="400" cy="300" r="70" fill="url(#nodeGrad)" stroke="#ffffff" stroke-width="4"/>
+  <circle cx="400" cy="300" r="50" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+  
+  <!-- Server icon in center -->
+  <rect x="370" y="270" width="60" height="50" rx="5" fill="#ffffff"/>
+  <rect x="378" y="278" width="44" height="3" fill="#667eea"/>
+  <rect x="378" y="288" width="44" height="3" fill="#667eea"/>
+  <rect x="378" y="298" width="44" height="3" fill="#667eea"/>
+  <rect x="378" y="308" width="44" height="3" fill="#667eea"/>
+  
+  <!-- User nodes -->
+  <!-- Top left -->
+  <circle cx="150" cy="200" r="45" fill="#06b6d4" stroke="#ffffff" stroke-width="3"/>
+  <circle cx="150" cy="185" r="15" fill="#ffffff"/>
+  <path d="M 125 220 Q 150 210 175 220" fill="#ffffff"/>
+  
+  <!-- Top right -->
+  <circle cx="650" cy="200" r="45" fill="#06b6d4" stroke="#ffffff" stroke-width="3"/>
+  <circle cx="650" cy="185" r="15" fill="#ffffff"/>
+  <path d="M 625 220 Q 650 210 675 220" fill="#ffffff"/>
+  
+  <!-- Bottom left -->
+  <circle cx="150" cy="400" r="45" fill="#06b6d4" stroke="#ffffff" stroke-width="3"/>
+  <circle cx="150" cy="385" r="15" fill="#ffffff"/>
+  <path d="M 125 420 Q 150 410 175 420" fill="#ffffff"/>
+  
+  <!-- Bottom right -->
+  <circle cx="650" cy="400" r="45" fill="#06b6d4" stroke="#ffffff" stroke-width="3"/>
+  <circle cx="650" cy="385" r="15" fill="#ffffff"/>
+  <path d="M 625 420 Q 650 410 675 420" fill="#ffffff"/>
+  
+  <!-- Data packets animation -->
+  <circle r="6" fill="#fbbf24">
+    <animateMotion dur="3s" repeatCount="indefinite">
+      <mpath href="#path1"/>
+    </animateMotion>
+  </circle>
+  <path id="path1" d="M 150,200 L 400,300" fill="none" stroke="none"/>
+  
+  <circle r="6" fill="#fbbf24">
+    <animateMotion dur="3s" begin="0.75s" repeatCount="indefinite">
+      <mpath href="#path2"/>
+    </animateMotion>
+  </circle>
+  <path id="path2" d="M 650,200 L 400,300" fill="none" stroke="none"/>
+  
+  <circle r="6" fill="#fbbf24">
+    <animateMotion dur="3s" begin="1.5s" repeatCount="indefinite">
+      <mpath href="#path3"/>
+    </animateMotion>
+  </circle>
+  <path id="path3" d="M 150,400 L 400,300" fill="none" stroke="none"/>
+  
+  <circle r="6" fill="#fbbf24">
+    <animateMotion dur="3s" begin="2.25s" repeatCount="indefinite">
+      <mpath href="#path4"/>
+    </animateMotion>
+  </circle>
+  <path id="path4" d="M 650,400 L 400,300" fill="none" stroke="none"/>
+</svg>
