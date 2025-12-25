@@ -859,7 +859,7 @@
         /* ===== PROJETS ===== */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             position: relative;
             z-index: 1;
@@ -873,6 +873,8 @@
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
 
         .project-card::before {
@@ -928,6 +930,10 @@
             margin-bottom: 1rem;
             position: relative;
             z-index: 1;
+        }
+
+        .project-card > .btn {
+            margin-top: auto;
         }
 
         /* ===== CERTIFICATIONS ===== */
@@ -1390,7 +1396,7 @@
             }
 
             .projects-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr !important;
                 gap: 1.5rem;
             }
 
@@ -1398,6 +1404,14 @@
             .project-card,
             .timeline-item {
                 padding: 1.5rem;
+                max-width: 100%;
+                overflow-x: hidden;
+            }
+
+            .project-card ul,
+            .timeline-item ul {
+                margin-left: 1rem !important;
+                padding-left: 0.5rem !important;
             }
 
             .timeline-item h3 {
@@ -1431,8 +1445,23 @@
                 font-size: 1rem;
             }
 
+            .competences-grid-bottom,
+            .langues-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem !important;
+            }
+
+            .skill-image,
+            .project-card .skill-image {
+                max-width: 100% !important;
+                width: 100% !important;
+                height: auto !important;
+                min-height: 150px;
+            }
+
             section {
                 padding: 3rem 1rem;
+                overflow-x: hidden;
             }
         }
 
@@ -1645,7 +1674,7 @@
         <div class="hero-content">
             <div class="hero-text">
                 <h1>Salut, je suis <span class="name">SALIMA ZRIBI</span></h1>
-                <p class="title"><i class="fas fa-shield-halved"></i> Étudiante en Cybersécurité et Réseaux</p>
+                <p class="title"><i class="fas fa-shield-halved"></i> Étudiante en Cybersécurité et Réseaux | Administratrice Réseau</p>
                 <p>Étudiante en BUT Réseaux et Télécommunications, parcours Cybersécurité, dans le cadre d'une
                     co-diplomation entre l'ISI (Tunisie) et l'Université Sorbonne Paris Nord. Passionnée par la sécurité
                     des systèmes d'information.</p>
@@ -1680,14 +1709,14 @@
                     <li>Administration réseau</li>
                 </ul>
                 <p><strong>Matière:</strong> SAE502 - Piloter un projet informatique</p>
-                <a href="https://github.com/aliyamaatit/SAE_R502_SANO" target="_blank" class="btn btn-secondary" style="margin-top: 1rem;"><i class="fab fa-github"></i> Voir le projet</a>
+                <a href="https://github.com/aliyamaatit/SAE_R502_SANO" target="_blank" class="btn btn-secondary"><i class="fab fa-github"></i> Voir le projet</a>
             </div>
             <div class="project-card fade-in">
                 <img src="images/connecter.svg" alt="Connecter les entreprises et les usagers" class="skill-image">
                 <h3><i class="fas fa-plug"></i> Connecter les entreprises et les usagers</h3>
                 <p>Mise en place de solutions de connectivité et d'interconnexion pour assurer la communication entre entreprises et utilisateurs. Développement des compétences en expression et culture (langues anglais et français) pour une communication professionnelle efficace</p>
                 <p><strong>Matière:</strong> R506 - Expression-culture-comm pro</p>
-                <a href="https://www.canva.com/design/DAG55iBU9gs/Zl6jyHRea74gUDhaIwjbCw/edit" target="_blank" class="btn btn-secondary" style="margin-top: 1rem;"><i class="fas fa-presentation"></i> Voir la présentation</a>
+                <a href="https://www.canva.com/design/DAG55iBU9gs/Zl6jyHRea74gUDhaIwjbCw/edit" target="_blank" class="btn btn-secondary"><i class="fas fa-presentation"></i> Voir la présentation</a>
             </div>
             <div class="project-card fade-in">
                 <img src="images/dev.jpg" alt="Programmation" class="skill-image">
@@ -1702,10 +1731,10 @@
                     <li>Intelligence Artificielle</li>
                 </ul>
                 <p><strong>Matière:</strong> Supervision des réseaux</p>
-                <a href="resume/Compte rendu TP 4 — Syslog sous linux avec le service rsyslog.pdf" target="_blank" class="btn btn-secondary" style="margin-top: 1rem;"><i class="fas fa-file-pdf"></i> Voir le compte rendu</a>
+                <a href="resume/Compte rendu TP 4 — Syslog sous linux avec le service rsyslog.pdf" target="_blank" class="btn btn-secondary"><i class="fas fa-file-pdf"></i> Voir le compte rendu</a>
             </div>
         </div>
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 900px; margin: 2rem auto 0;">
+        <div class="competences-grid-bottom" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 900px; margin: 2rem auto 0;">
             <div class="project-card fade-in">
                 <img src="images/sysvir.jpg" alt="Systèmes & Virtualisation" class="skill-image">
                 <h3><i class="fas fa-shield-alt"></i> Administrer un système d'information sécurisé</h3>
@@ -1725,7 +1754,7 @@
                 <h3><i class="fas fa-eye"></i> Surveiller un système d'information sécurisé</h3>
                 <p>Analyse et détection des menaces, surveillance continue des infrastructures pour assurer la sécurité des systèmes</p>
                 <p><strong>Matière:</strong> Supervision de la Sécurité</p>
-                <a href="resume/TP 3 Analyse du Malware.pdf.pdf" target="_blank" class="btn btn-secondary" style="margin-top: 1rem;"><i class="fas fa-file-pdf"></i> Voir le compte rendu</a>
+                <a href="resume/TP 3 Analyse du Malware.pdf.pdf" target="_blank" class="btn btn-secondary"><i class="fas fa-file-pdf"></i> Voir le compte rendu</a>
             </div>
         </div>
     </section>
@@ -1932,7 +1961,7 @@
     <!-- LANGUES -->
     <section id="langues">
         <h2>Langues</h2>
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 800px; margin: 0 auto;">
+        <div class="langues-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 800px; margin: 0 auto;">
             <div class="skill-card fade-in">
                 <h3><i class="fas fa-language"></i> Arabe</h3>
                 <p>Langue maternelle</p>
