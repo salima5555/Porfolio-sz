@@ -1,45 +1,66 @@
 <!DOCTYPE html>
 <html lang="fr">
 
+<!-- 
+=======================================================================
+    PORTFOLIO SALIMA ZRIBI - CYBERSÉCURITÉ & RÉSEAUX
+=======================================================================
+    Description : Portfolio personnel professionnel
+    Auteur : Salima Zribi
+    Thème : Cybersécurité et Technologies
+=======================================================================
+-->
+
 <head>
+    <!-- ===== MÉTADONNÉES DE BASE ===== -->
+    <!-- Définit le jeu de caractères et la compatibilité responsive -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salima Zribi - Cybersecurity & Networking</title>
 
-    <!-- Favicon -->
+    <!-- ===== FAVICON ===== -->
+    <!-- Icône affichée dans l'onglet du navigateur -->
     <link rel="icon" type="image/png" href="images/logo.png">
     <link rel="apple-touch-icon" href="images/logo.png">
 
-    <!-- Google Fonts -->
+    <!-- ===== POLICES GOOGLE FONTS ===== -->
+    <!-- Importation des polices Inter (élégante) et Fira Code (technique/monospace) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap"
         rel="stylesheet">
 
-    <!-- Font Awesome Icons -->
+    <!-- ===== FONT AWESOME ICONS ===== -->
+    <!-- Bibliothèque d'icônes pour l'interface utilisateur -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
         /* ===== VARIABLES DE COULEURS (Facile à modifier) ===== */
+        /* Ces variables permettent de modifier rapidement la palette de couleurs du site */
         :root {
-            --primary-purple: #8B5CF6;
-            --light-purple: #A78BFA;
-            --dark-purple: #6D28D9;
-            --bg-dark: #0a0a0a;
-            --bg-card: #1a1a1a;
-            --text-primary: #ffffff;
-            --text-secondary: #9ca3af;
-            --accent-cyan: #06b6d4;
+            --primary-purple: #8B5CF6;    /* Couleur violette principale */
+            --light-purple: #A78BFA;      /* Violet clair pour les variantes */
+            --dark-purple: #6D28D9;       /* Violet foncé pour les gradients */
+            --bg-dark: #0a0a0a;           /* Fond noir principal */
+            --bg-card: #1a1a1a;           /* Fond des cartes/sections */
+            --text-primary: #ffffff;       /* Texte principal blanc */
+            --text-secondary: #9ca3af;    /* Texte secondaire gris */
+            --accent-cyan: #06b6d4;       /* Couleur cyan d'accentuation */
         }
 
+        /* ===== RÉINITIALISATION DES STYLES ===== */
+        /* Reset des marges et padding pour tous les éléments */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            /* Curseur personnalisé violet avec effet de cercles concentriques */
             cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="12" fill="%238B5CF6" opacity="0.4"/><circle cx="16" cy="16" r="6" fill="%23A78BFA"/><circle cx="16" cy="16" r="2" fill="%23ffffff"/></svg>'), auto !important;
         }
 
+        /* ===== CURSEUR PERSONNALISÉ POUR LES ÉLÉMENTS CLIQUABLES ===== */
+        /* Curseur violet plus visible pour les liens, boutons et éléments interactifs */
         a,
         button,
         .btn,
@@ -49,561 +70,625 @@
             cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="%238B5CF6" opacity="0.6"/><circle cx="16" cy="16" r="8" fill="%23A78BFA"/><circle cx="16" cy="16" r="3" fill="%23ffffff"/></svg>'), pointer !important;
         }
 
-        /* Forcer le curseur personnalisé sur tous les états */
+        /* Curseur avec plus d'opacité lors du clic ou focus */
         *:active,
         *:focus {
             cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="%238B5CF6" opacity="0.8"/><circle cx="16" cy="16" r="8" fill="%23A78BFA"/><circle cx="16" cy="16" r="3" fill="%23ffffff"/></svg>'), pointer !important;
         }
 
+        /* ===== DÉFILEMENT FLUIDE ===== */
+        /* Active les animations de scroll smooth pour une meilleure UX */
         html {
             scroll-behavior: smooth;
         }
 
+        /* ===== STYLES DU BODY ===== */
         body {
-            /* Primary font changed to Fira Code for a technical / cyber aesthetic */
+            /* Police Fira Code pour une esthétique technique/cyber */
             font-family: 'Fira Code', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', monospace;
-            background: var(--bg-dark);
-            color: var(--text-primary);
-            line-height: 1.6;
-            overflow-x: hidden;
-            min-height: 100vh;
-            position: relative;
+            background: var(--bg-dark);   /* Fond noir principal */
+            color: var(--text-primary);    /* Texte blanc */
+            line-height: 1.6;              /* Espacement des lignes pour la lisibilité */
+            overflow-x: hidden;            /* Empêche le scroll horizontal */
+            min-height: 100vh;             /* Hauteur minimale de la fenêtre */
+            position: relative;            /* Permet le positionnement des pseudo-éléments */
         }
 
-        /* ===== ANIMATED BACKGROUND GRID ===== */
+        /* ===== GRILLE DE FOND ANIMÉE ===== */
+        /* Crée une grille subtile violette en arrière-plan pour l'effet cyber */
         body::before {
-            content: '';
-            position: fixed;
+            content: '';                   /* Pseudo-élément vide */
+            position: fixed;               /* Reste fixe pendant le scroll */
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            /* Grille formée par deux gradients linéaires croisés */
             background-image:
                 linear-gradient(rgba(139, 92, 246, 0.03) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(139, 92, 246, 0.03) 1px, transparent 1px);
-            background-size: 50px 50px;
-            z-index: 0;
-            pointer-events: none;
+            background-size: 50px 50px;    /* Taille des carrés de la grille */
+            z-index: 0;                    /* Derrière tout le contenu */
+            pointer-events: none;          /* Ne bloque pas les clics */
         }
 
+        /* ===== HALOS LUMINEUX DE FOND ===== */
+        /* Crée des halos de lumière violette et cyan animés en arrière-plan */
         body::after {
-            content: '';
-            position: fixed;
+            content: '';                   /* Pseudo-élément vide */
+            position: fixed;               /* Reste fixe pendant le scroll */
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            /* Trois gradients radiaux positionnés à différents endroits */
             background:
-                radial-gradient(circle at 10% 20%, rgba(139, 92, 246, 0.08) 0%, transparent 30%),
-                radial-gradient(circle at 90% 80%, rgba(109, 40, 217, 0.06) 0%, transparent 30%),
-                radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.04) 0%, transparent 40%);
-            z-index: 0;
-            pointer-events: none;
-            animation: backgroundPulse 15s ease-in-out infinite;
+                radial-gradient(circle at 10% 20%, rgba(139, 92, 246, 0.08) 0%, transparent 30%),  /* Halo violet en haut à gauche */
+                radial-gradient(circle at 90% 80%, rgba(109, 40, 217, 0.06) 0%, transparent 30%),  /* Halo violet foncé en bas à droite */
+                radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.04) 0%, transparent 40%);   /* Halo cyan au centre */
+            z-index: 0;                    /* Derrière tout le contenu */
+            pointer-events: none;          /* Ne bloque pas les clics */
+            animation: backgroundPulse 15s ease-in-out infinite;  /* Animation de pulsation */
         }
 
+        /* Animation de pulsation du fond (respiration) */
         @keyframes backgroundPulse {
-
             0%,
             100% {
-                opacity: 1;
+                opacity: 1;                /* Opacité normale */
             }
-
             50% {
-                opacity: 0.7;
+                opacity: 0.7;              /* Opacité réduite au milieu */
             }
         }
 
-        /* ===== SCROLL ANIMATIONS ===== */
+        /* ===== ANIMATIONS DE DÉFILEMENT ===== */
+        /* Effet fade-in pour les éléments qui apparaissent au scroll */
         .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 0.8s ease forwards;
+            opacity: 0;                    /* Invisible au départ */
+            transform: translateY(30px);   /* Décalé vers le bas */
+            animation: fadeInUp 0.8s ease forwards;  /* Animation d'apparition */
         }
 
+        /* Définition de l'animation fade-in (montée en fondu) */
         @keyframes fadeInUp {
             to {
-                opacity: 1;
-                transform: translateY(0);
+                opacity: 1;                /* Devient visible */
+                transform: translateY(0);  /* Revient à sa position normale */
             }
         }
 
-        /* Stagger animation delays for children */
+        /* ===== DÉLAIS ANIMÉS EN CASCADE ===== */
+        /* Chaque élément enfant apparait avec un délai progressif pour un effet cascade */
         .fade-in:nth-child(1) {
-            animation-delay: 0.1s;
+            animation-delay: 0.1s;         /* 1er élément: 0.1s */
         }
 
         .fade-in:nth-child(2) {
-            animation-delay: 0.2s;
+            animation-delay: 0.2s;         /* 2ème élément: 0.2s */
         }
 
         .fade-in:nth-child(3) {
-            animation-delay: 0.3s;
+            animation-delay: 0.3s;         /* 3ème élément: 0.3s */
         }
 
         .fade-in:nth-child(4) {
-            animation-delay: 0.4s;
+            animation-delay: 0.4s;         /* 4ème élément: 0.4s */
         }
 
         .fade-in:nth-child(5) {
-            animation-delay: 0.5s;
+            animation-delay: 0.5s;         /* 5ème élément: 0.5s */
         }
 
         .fade-in:nth-child(6) {
-            animation-delay: 0.6s;
+            animation-delay: 0.6s;         /* 6ème élément: 0.6s */
         }
 
-        /* ===== NAVIGATION ===== */
+        /* ===== BARRE DE NAVIGATION ===== */
+        /* Menu de navigation en haut de la page avec effet de verre dépoli */
         nav {
-            position: relative;
+            position: relative;            /* Position normale dans le flux */
             top: 0;
-            width: 100%;
-            background: rgba(10, 10, 10, 0.6);
-            backdrop-filter: blur(20px);
-            padding: 1rem 2rem;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(139, 92, 246, 0.3);
-            animation: slideDown 0.5s ease;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 3rem;
+            width: 100%;                   /* Occupe toute la largeur */
+            background: rgba(10, 10, 10, 0.6);  /* Fond noir semi-transparent */
+            backdrop-filter: blur(20px);   /* Effet de flou d'arrière-plan (verre dépoli) */
+            padding: 1rem 2rem;            /* Espacement interne */
+            z-index: 1000;                 /* Au-dessus de tout le contenu */
+            border-bottom: 1px solid rgba(139, 92, 246, 0.3);  /* Bordure violette subtile */
+            animation: slideDown 0.5s ease;  /* Animation de descente au chargement */
+            display: flex;                 /* Flexbox pour l'alignement */
+            align-items: center;           /* Centre verticalement */
+            justify-content: space-between;  /* Espace entre logo et menu */
+            gap: 3rem;                     /* Espacement entre éléments */
         }
 
+        /* ===== LOGO DE NAVIGATION ===== */
+        /* Logo affiché dans le coin gauche du menu */
         .nav-logo {
-            height: 48px;
-            width: auto;
-            z-index: 1001;
+            height: 48px;                  /* Hauteur fixe du logo */
+            width: auto;                   /* Largeur proportionnelle */
+            z-index: 1001;                 /* Au-dessus du menu hamburger */
             display: block;
         }
 
-        /* Hamburger Menu */
+        /* ===== MENU HAMBURGER (MOBILE) ===== */
+        /* Bouton menu à 3 barres pour mobile, caché sur desktop */
         .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            z-index: 1001;
-            gap: 5px;
+            display: none;                 /* Caché par défaut (visible seulement sur mobile) */
+            flex-direction: column;        /* Barres empilées verticalement */
+            cursor: pointer;               /* Curseur cliquable */
+            z-index: 1001;                 /* Au-dessus du menu */
+            gap: 5px;                      /* Espacement entre les barres */
         }
 
+        /* Chaque barre du menu hamburger */
         .hamburger span {
-            width: 28px;
-            height: 3px;
-            background: var(--primary-purple);
-            border-radius: 3px;
-            transition: all 0.3s ease;
+            width: 28px;                   /* Largeur des barres */
+            height: 3px;                   /* Épaisseur des barres */
+            background: var(--primary-purple);  /* Couleur violette */
+            border-radius: 3px;            /* Bords arrondis */
+            transition: all 0.3s ease;     /* Animation fluide lors du changement */
         }
 
+        /* ===== ANIMATION MENU HAMBURGER ACTIF ===== */
+        /* Transformation des 3 barres en croix (X) lorsque le menu est ouvert */
         .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(8px, 8px);
+            transform: rotate(45deg) translate(8px, 8px);  /* Barre du haut: rotation et déplacement */
         }
 
         .hamburger.active span:nth-child(2) {
-            opacity: 0;
+            opacity: 0;                    /* Barre du milieu: disparait */
         }
 
         .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(8px, -8px);
+            transform: rotate(-45deg) translate(8px, -8px);  /* Barre du bas: rotation inverse */
         }
 
+        /* Animation de descente du menu au chargement de la page */
         @keyframes slideDown {
             from {
-                transform: translateY(-100%);
-                opacity: 0;
+                transform: translateY(-100%);  /* Départ: menu en dehors de l'écran (haut) */
+                opacity: 0;                     /* Invisible */
             }
-
             to {
-                transform: translateY(0);
-                opacity: 1;
+                transform: translateY(0);       /* Arrivée: position normale */
+                opacity: 1;                     /* Visible */
             }
         }
 
+        /* ===== LISTE DE NAVIGATION ===== */
+        /* Liste des liens du menu */
         nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: flex-start;
-            gap: 2rem;
+            list-style: none;              /* Retire les puces de liste */
+            display: flex;                 /* Disposition horizontale */
+            justify-content: flex-start;   /* Aligné à gauche */
+            gap: 2rem;                     /* Espacement entre les liens */
             margin: 0;
-            flex: 1;
+            flex: 1;                       /* Prend l'espace disponible */
         }
 
-        /* Navbar links (only links inside the UL) - logo link excluded */
+        /* ===== LIENS DE NAVIGATION ===== */
+        /* Styles des liens dans le menu (exclut le lien du logo) */
         nav ul a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            position: relative;
+            color: var(--text-secondary);  /* Gris par défaut */
+            text-decoration: none;         /* Pas de soulignement */
+            font-weight: 500;              /* Texte semi-gras */
+            transition: all 0.3s ease;     /* Transition fluide au survol */
+            padding: 0.5rem 1rem;          /* Espacement interne */
+            border-radius: 8px;            /* Coins arrondis */
+            position: relative;            /* Pour le pseudo-élément ::after */
         }
 
+        /* Ligne de soulignement animée sous les liens */
         nav ul a::after {
-            content: '';
+            content: '';                   /* Pseudo-élément vide */
             position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background: var(--primary-purple);
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
+            bottom: 0;                     /* Positionné en bas du lien */
+            left: 50%;                     /* Centré horizontalement */
+            width: 0;                      /* Largeur nulle au départ */
+            height: 2px;                   /* Épaisseur de la ligne */
+            background: var(--primary-purple);  /* Couleur violette */
+            transition: all 0.3s ease;     /* Animation fluide */
+            transform: translateX(-50%);   /* Centre la ligne */
         }
 
+        /* ===== EFFET HOVER SUR LES LIENS ===== */
+        /* Changements visuels au survol des liens */
         nav ul a:hover {
-            color: var(--primary-purple);
-            background: rgba(139, 92, 246, 0.1);
+            color: var(--primary-purple);  /* Texte devient violet */
+            background: rgba(139, 92, 246, 0.1);  /* Fond violet léger */
         }
 
+        /* Élargissement de la ligne au survol */
         nav ul a:hover::after {
-            width: 80%;
+            width: 80%;                    /* La ligne s'élargit à 80% */
         }
 
-        /* ===== HERO SECTION ===== */
+        /* ===== SECTION HÉRO (ACCUEIL) ===== */
+        /* Section d'accueil principale avec présentation et photo */
         .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 4rem 2rem;
+            min-height: 100vh;             /* Prend toute la hauteur de l'écran */
+            display: flex;                 /* Flexbox pour centrer le contenu */
+            align-items: center;           /* Centre verticalement */
+            justify-content: center;       /* Centre horizontalement */
+            padding: 4rem 2rem;            /* Espacement interne */
+            /* Deux gradients radiaux pour l'effet de fond lumineux */
             background: radial-gradient(circle at top right, rgba(139, 92, 246, 0.1), transparent 50%),
                 radial-gradient(circle at bottom left, rgba(109, 40, 217, 0.1), transparent 50%);
-            position: relative;
-            z-index: 1;
-            overflow: hidden;
+            position: relative;            /* Pour les éléments absolus */
+            z-index: 1;                    /* Au-dessus du fond de la page */
+            overflow: hidden;              /* Cache les débordements */
         }
 
+        /* ===== ANIMATIONS DE FORMES MORPHING ===== */
+        /* Animation qui change la forme des éléments (border-radius) */
         @keyframes morphShape {
-
             0%,
             100% {
-                border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+                border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;  /* Forme de départ/fin */
             }
-
             50% {
-                border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
+                border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;  /* Forme intermédiaire */
             }
         }
 
+        /* Animation de rotation 360° */
         @keyframes rotate {
             from {
-                transform: rotate(0deg);
+                transform: rotate(0deg);    /* Départ: 0° */
             }
-
             to {
-                transform: rotate(360deg);
+                transform: rotate(360deg);  /* Fin: 360° */
             }
         }
 
+        /* ===== CONTENU DE LA SECTION HÉRO ===== */
+        /* Grille 2 colonnes: texte à gauche, image à droite */
         .hero-content {
-            max-width: 1200px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
+            max-width: 1200px;             /* Largeur maximale du contenu */
+            display: grid;                 /* Grille CSS */
+            grid-template-columns: 1fr 1fr;  /* 2 colonnes égales */
+            gap: 4rem;                     /* Espacement entre les colonnes */
+            align-items: center;           /* Centre verticalement */
             position: relative;
-            z-index: 1;
+            z-index: 1;                    /* Au-dessus du fond */
         }
 
+        /* ===== TITRE PRINCIPAL H1 ===== */
+        /* Grand titre avec le nom */
         .hero-text h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            animation: fadeInLeft 1s ease;
-            font-weight: 800;
-            letter-spacing: -0.5px;
+            font-size: 3rem;               /* Taille de police importante */
+            margin-bottom: 1rem;           /* Marge en bas */
+            animation: fadeInLeft 1s ease; /* Animation d'entrée depuis la gauche */
+            font-weight: 800;              /* Très gras */
+            letter-spacing: -0.5px;        /* Espacement légèrement réduit entre les lettres */
         }
 
+        /* Animation d'entrée depuis la gauche */
         @keyframes fadeInLeft {
             from {
-                opacity: 0;
-                transform: translateX(-50px);
+                opacity: 0;                /* Invisible au départ */
+                transform: translateX(-50px);  /* Décalé vers la gauche */
             }
-
             to {
-                opacity: 1;
-                transform: translateX(0);
+                opacity: 1;                /* Visible */
+                transform: translateX(0);  /* Position normale */
             }
         }
 
+        /* ===== NOM ANIM\u00c9 AVEC EFFET GLOW ===== */
+        /* Le nom "SALIMA ZRIBI" avec effet de lueur violette pulsante */
         .hero-text .name {
-            color: var(--primary-purple);
-            text-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
-            display: inline-block;
-            animation: glow-text 2s ease-in-out infinite;
+            color: var(--primary-purple);  /* Couleur violette */
+            text-shadow: 0 0 20px rgba(139, 92, 246, 0.5);  /* Ombre lumineuse violette */
+            display: inline-block;         /* Pour appliquer les transformations */
+            animation: glow-text 2s ease-in-out infinite;  /* Animation de pulsation */
         }
 
+        /* Animation de pulsation lumineuse du texte */
         @keyframes glow-text {
-
             0%,
             100% {
+                /* \u00c9tat normal: lueur moyenne */
                 text-shadow: 0 0 20px rgba(139, 92, 246, 0.5),
                     0 0 30px rgba(139, 92, 246, 0.3);
             }
-
             50% {
+                /* \u00c9tat de pic: lueur intense */
                 text-shadow: 0 0 30px rgba(139, 92, 246, 0.8),
                     0 0 50px rgba(139, 92, 246, 0.5),
                     0 0 70px rgba(139, 92, 246, 0.3);
             }
         }
 
+        /* ===== SOUS-TITRE / TITRE PROFESSIONNEL ===== */
+        /* Ligne "Étudiante en Cybersécurité..." avec icône */
         .hero-text .title {
-            color: var(--light-purple);
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            animation: fadeInLeft 1s ease 0.2s both;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            color: var(--light-purple);    /* Couleur violet clair */
+            font-size: 1.5rem;             /* Taille moyenne */
+            margin-bottom: 1.5rem;         /* Espacement en bas */
+            animation: fadeInLeft 1s ease 0.2s both;  /* Animation avec délai de 0.2s */
+            font-weight: 500;              /* Semi-gras */
+            display: flex;                 /* Flexbox pour aligner icône et texte */
+            align-items: center;           /* Alignement vertical */
+            gap: 0.5rem;                   /* Espacement entre icône et texte */
         }
 
+        /* Icône dans le titre (bouclier) */
         .hero-text .title i {
-            color: var(--accent-cyan);
+            color: var(--accent-cyan);     /* Couleur cyan pour contraste */
         }
 
+        /* ===== PARAGRAPHE DE DESCRIPTION ===== */
+        /* Texte descriptif de présentation */
         .hero-text p {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            animation: fadeInLeft 1s ease 0.4s both;
+            color: var(--text-secondary);  /* Gris pour le texte secondaire */
+            font-size: 1.1rem;             /* Taille légèrement plus grande */
+            margin-bottom: 2rem;           /* Espacement en bas */
+            animation: fadeInLeft 1s ease 0.4s both;  /* Animation avec délai de 0.4s */
         }
 
+        /* ===== CONTENEUR DES BOUTONS D'ACTION ===== */
+        /* Groupe de boutons "Me Contacter", "Télécharger CV", "LinkedIn" */
         .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            animation: fadeInLeft 1s ease 0.6s both;
-            flex-wrap: wrap;
-            justify-content: flex-start;
+            display: flex;                 /* Flexbox pour alignement horizontal */
+            gap: 1rem;                     /* Espacement entre les boutons */
+            animation: fadeInLeft 1s ease 0.6s both;  /* Animation avec délai de 0.6s */
+            flex-wrap: wrap;               /* Passage à la ligne si nécessaire */
+            justify-content: flex-start;   /* Aligné à gauche */
         }
 
+        /* ===== STYLE DE BASE DES BOUTONS ===== */
+        /* Classe commune pour tous les boutons */
         .btn {
-            padding: 0.8rem 1.8rem;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            position: relative;
-            overflow: hidden;
-            white-space: nowrap;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            min-width: 160px;
+            padding: 0.8rem 1.8rem;        /* Espacement interne */
+            border-radius: 12px;           /* Coins arrondis */
+            text-decoration: none;         /* Pas de soulignement */
+            font-weight: 600;              /* Texte gras */
+            transition: all 0.3s ease;     /* Transition fluide */
+            border: none;                  /* Pas de bordure par défaut */
+            position: relative;            /* Pour le pseudo-élément ::before */
+            overflow: hidden;              /* Cache le débordement de l'effet */
+            white-space: nowrap;           /* Texte sur une seule ligne */
+            display: inline-flex;          /* Flexbox inline */
+            align-items: center;           /* Centre verticalement */
+            justify-content: center;       /* Centre horizontalement */
+            gap: 0.5rem;                   /* Espacement entre icône et texte */
+            min-width: 160px;              /* Largeur minimale */
         }
 
+        /* ===== EFFET DE RIPPLE SUR LES BOUTONS ===== */
+        /* Effet d'onde circulaire qui se propage au survol */
         .btn::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
-            transition: width 0.6s, height 0.6s, top 0.6s, left 0.6s;
-            transform: translate(-50%, -50%);
+            content: '';                   /* Pseudo-élément vide */
+            position: absolute;            /* Positionnement absolu dans le bouton */
+            top: 50%;                      /* Centré verticalement */
+            left: 50%;                     /* Centré horizontalement */
+            width: 0;                      /* Largeur nulle au départ */
+            height: 0;                     /* Hauteur nulle au départ */
+            border-radius: 50%;            /* Forme circulaire */
+            background: rgba(255, 255, 255, 0.2);  /* Blanc semi-transparent */
+            transition: width 0.6s, height 0.6s, top 0.6s, left 0.6s;  /* Animation fluide */
+            transform: translate(-50%, -50%);  /* Centre le cercle */
         }
 
+        /* Expansion du cercle au survol */
         .btn:hover::before {
-            width: 300px;
+            width: 300px;                  /* Le cercle s'agrandit */
             height: 300px;
         }
 
+        /* ===== BOUTON PRINCIPAL (PRIMARY) ===== */
+        /* Bouton violet avec gradient pour l'action principale */
         .btn-primary {
-            background: linear-gradient(135deg, var(--primary-purple), var(--dark-purple));
-            color: white;
-            box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
-            border: 2px solid transparent;
+            background: linear-gradient(135deg, var(--primary-purple), var(--dark-purple));  /* Dégradé violet */
+            color: white;                  /* Texte blanc */
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);  /* Ombre lumineuse */
+            border: 2px solid transparent; /* Bordure transparente */
         }
 
         .btn-primary i {
-            font-size: 1rem;
+            font-size: 1rem;               /* Taille de l'icône */
         }
 
+        /* Effet au survol du bouton primary */
         .btn-primary:hover {
-            box-shadow: 0 0 30px rgba(139, 92, 246, 0.6);
-            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(139, 92, 246, 0.6);  /* Ombre plus intense */
+            transform: translateY(-2px);   /* Légère élévation */
         }
 
+        /* ===== BOUTON SECONDAIRE ===== */
+        /* Bouton avec bordure violette, fond transparent */
         .btn-secondary {
-            background: transparent;
-            color: var(--primary-purple);
-            border: 2px solid var(--primary-purple);
+            background: transparent;       /* Fond transparent */
+            color: var(--primary-purple);  /* Texte violet */
+            border: 2px solid var(--primary-purple);  /* Bordure violette */
         }
 
         .btn-secondary i {
             font-size: 1rem;
         }
 
+        /* Effet au survol du bouton secondary */
         .btn-secondary:hover {
-            background: rgba(139, 92, 246, 0.1);
-            box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
-            border-color: var(--light-purple);
-            color: var(--light-purple);
+            background: rgba(139, 92, 246, 0.1);  /* Léger fond violet */
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);  /* Ombre violette */
+            border-color: var(--light-purple);  /* Bordure violet clair */
+            color: var(--light-purple);    /* Texte violet clair */
         }
 
-        /* ===== RESUME DOWNLOAD BUTTON ===== */
+        /* ===== BOUTON DE TÉLÉCHARGEMENT CV ===== */
+        /* Bouton spécial cyan avec effet de shine au survol */
         .btn-resume {
-            background: linear-gradient(135deg, #06b6d4, #0891b2);
+            background: linear-gradient(135deg, #06b6d4, #0891b2);  /* Dégradé cyan */
             color: white;
-            border: 2px solid rgba(6, 182, 212, 0.5);
+            border: 2px solid rgba(6, 182, 212, 0.5);  /* Bordure cyan semi-transparente */
             position: relative;
             overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);  /* Transition avec rebond */
         }
 
+        /* Effet de lumière qui traverse le bouton */
         .btn-resume::after {
-            content: '';
+            content: '';                   /* Pseudo-élément vide */
             position: absolute;
             top: 0;
-            left: -100%;
+            left: -100%;                   /* Départ hors de vue à gauche */
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.7s;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);  /* Bande lumineuse */
+            transition: left 0.7s;         /* Animation de déplacement */
         }
 
+        /* Au survol, la lumière traverse de gauche à droite */
         .btn-resume:hover::after {
-            left: 100%;
+            left: 100%;                    /* Sort à droite */
         }
 
+        /* Effets visuels au survol du bouton CV */
         .btn-resume:hover {
-            box-shadow: 0 0 30px rgba(6, 182, 212, 0.6),
-                0 0 50px rgba(6, 182, 212, 0.3);
-            transform: translateY(-3px) scale(1.05);
-            border-color: var(--accent-cyan);
+            box-shadow: 0 0 30px rgba(6, 182, 212, 0.6),    /* Ombre cyan intense */
+                0 0 50px rgba(6, 182, 212, 0.3);            /* Ombre étendue */
+            transform: translateY(-3px) scale(1.05);  /* Élévation et agrandissement */
+            border-color: var(--accent-cyan);  /* Bordure cyan vif */
         }
 
+        /* Icône du bouton CV avec animation de rebond */
         .btn-resume i {
             font-size: 1.1rem;
-            animation: bounce 2s ease-in-out infinite;
+            animation: bounce 2s ease-in-out infinite;  /* Rebond continu */
         }
 
+        /* Animation de rebond lente */
         @keyframes bounce {
-
             0%,
             100% {
-                transform: translateY(0);
+                transform: translateY(0);  /* Position normale */
             }
-
             50% {
-                transform: translateY(-5px);
+                transform: translateY(-5px);  /* Monte de 5px */
             }
         }
 
+        /* Au survol, le rebond devient plus rapide */
         .btn-resume:hover i {
             animation: bouncefast 0.6s ease-in-out infinite;
         }
 
+        /* Animation de rebond rapide */
         @keyframes bouncefast {
-
             0%,
             100% {
-                transform: translateY(0);
+                transform: translateY(0);  /* Position de base */
             }
-
             50% {
-                transform: translateY(-8px);
+                transform: translateY(-8px);  /* Monte de 8px */
             }
         }
 
-        /* ===== PHOTO PROFILE ===== */
+        /* ===== PHOTO DE PROFIL ===== */
+        /* Conteneur de la photo dans la section héro */
         .hero-image {
-            display: flex;
-            justify-content: center;
-            animation: fadeInRight 1s ease;
+            display: flex;                 /* Flexbox pour centrer */
+            justify-content: center;       /* Centre horizontalement */
+            animation: fadeInRight 1s ease;  /* Animation d'entrée depuis la droite */
         }
 
+        /* Animation d'entrée depuis la droite */
         @keyframes fadeInRight {
             from {
-                opacity: 0;
-                transform: translateX(50px);
+                opacity: 0;                /* Invisible */
+                transform: translateX(50px);  /* Décalé vers la droite */
             }
-
             to {
-                opacity: 1;
-                transform: translateX(0);
+                opacity: 1;                /* Visible */
+                transform: translateX(0);  /* Position normale */
             }
         }
 
+        /* ===== IMAGE DE PROFIL ===== */
+        /* Photo ronde avec effets de lueur et flottement */
         .profile-img {
-            width: 350px;
-            height: 350px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid var(--primary-purple);
-            box-shadow: 0 0 60px rgba(139, 92, 246, 0.6),
-                0 0 100px rgba(139, 92, 246, 0.3);
-            animation: glow 3s ease-in-out infinite, float 6s ease-in-out infinite;
-            transition: transform 0.3s ease;
+            width: 350px;                  /* Largeur fixe */
+            height: 350px;                 /* Hauteur fixe (cercle) */
+            border-radius: 50%;            /* Forme circulaire */
+            object-fit: cover;             /* Recadrage pour remplir le cercle */
+            border: 4px solid var(--primary-purple);  /* Bordure violette */
+            box-shadow: 0 0 60px rgba(139, 92, 246, 0.6),    /* Ombre violette proche */
+                0 0 100px rgba(139, 92, 246, 0.3);           /* Ombre violette étendue */
+            animation: glow 3s ease-in-out infinite, float 6s ease-in-out infinite;  /* Deux animations */
+            transition: transform 0.3s ease;  /* Transition pour le hover */
         }
 
+        /* Agrandissement au survol */
         .profile-img:hover {
-            transform: scale(1.05);
+            transform: scale(1.05);        /* Zoom de 5% */
         }
 
+        /* Animation de pulsation de la lueur */
         @keyframes glow {
-
             0%,
             100% {
+                /* Lueur normale */
                 box-shadow: 0 0 60px rgba(139, 92, 246, 0.6),
                     0 0 100px rgba(139, 92, 246, 0.3);
             }
-
             50% {
+                /* Lueur intense */
                 box-shadow: 0 0 80px rgba(139, 92, 246, 0.8),
                     0 0 120px rgba(139, 92, 246, 0.5),
                     0 0 160px rgba(139, 92, 246, 0.2);
             }
         }
 
+        /* Animation de flottement vertical */
         @keyframes float {
-
             0%,
             100% {
-                transform: translateY(0);
+                transform: translateY(0);  /* Position de base */
             }
-
             50% {
-                transform: translateY(-20px);
+                transform: translateY(-20px);  /* Monte de 20px */
             }
         }
 
-        /* ===== SECTIONS ===== */
+        /* ===== SECTIONS GÉNÉRALES ===== */
+        /* Conteneurs des différentes sections du portfolio */
         section {
-            padding: 5rem 2rem;
-            max-width: 100%;
+            padding: 5rem 2rem;            /* Espacement interne généreux */
+            max-width: 100%;               /* Largeur complète */
             width: 100%;
-            margin: 0 auto;
+            margin: 0 auto;                /* Centrage */
             position: relative;
-            z-index: 1;
+            z-index: 1;                    /* Au-dessus du fond */
         }
 
+        /* Limitation de largeur pour le contenu des sections */
         section>* {
-            max-width: 1200px;
-            margin-left: auto;
+            max-width: 1200px;             /* Largeur maximale du contenu */
+            margin-left: auto;             /* Centrage automatique */
             margin-right: auto;
         }
 
+        /* Exception pour les titres h2 (pleine largeur) */
         section h2 {
             max-width: 100%;
         }
 
+        /* ===== TITRES DE SECTION (H2) ===== */
+        /* Grands titres violets centrés avec ligne décorative */
         h2 {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            text-align: center;
-            color: var(--primary-purple);
-            text-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
-            position: relative;
-            display: inline-block;
-            left: 50%;
-            transform: translateX(-50%);
-            font-weight: 700;
-            letter-spacing: -0.5px;
+            font-size: 2.5rem;             /* Taille importante */
+            margin-bottom: 3rem;           /* Espacement en bas */
+            text-align: center;            /* Centré */
+            color: var(--primary-purple);  /* Couleur violette */
+            text-shadow: 0 0 20px rgba(139, 92, 246, 0.3);  /* Ombre lumineuse */
+            position: relative;            /* Pour le pseudo-élément */
+            display: inline-block;         /* Pour le centrage */
+            left: 50%;                     /* Centrage horizontal */
+            transform: translateX(-50%);   /* Centrage précis */
+            font-weight: 700;              /* Très gras */
+            letter-spacing: -0.5px;        /* Lettres légèrement rapprochées */
         }
 
         h2::after {
@@ -1642,18 +1727,24 @@
 </head>
 
 <body>
-    <!-- NAVIGATION -->
+    <!-- =================================================================== -->
+    <!-- BARRE DE NAVIGATION -->
+    <!-- Menu principal avec logo et liens vers les différentes sections -->
+    <!-- =================================================================== -->
     <nav>
+        <!-- Lien vers l'accueil via le logo -->
         <a href="#home">
             <img src="images/logo.png" alt="Logo Salima Zribi" class="nav-logo">
         </a>
 
+        <!-- Menu hamburger (visible uniquement sur mobile) -->
         <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span></span>  <!-- Barre 1 du menu hamburger -->
+            <span></span>  <!-- Barre 2 du menu hamburger -->
+            <span></span>  <!-- Barre 3 du menu hamburger -->
         </div>
 
+        <!-- Liste des liens de navigation -->
         <ul id="navMenu">
             <li><a href="#home">Accueil</a></li>
             <li><a href="#skills">Compétences</a></li>
@@ -1665,20 +1756,26 @@
             <li><a href="#passions">Passions</a></li>
             <li><a href="#langues">Langues</a></li>
             <li><a href="#contact">Contact</a></li>
+            <!-- Lien de téléchargement du CV avec couleur cyan distinctive -->
             <li><a href="resume/cv-salima-zribi-version-finale.pdf" download style="color: var(--accent-cyan);"><i
                         class="fas fa-download"></i> CV</a></li>
         </ul>
     </nav>
 
-    <!-- HERO SECTION -->
+    <!-- =================================================================== -->
+    <!-- SECTION HÉRO / ACCUEIL -->
+    <!-- Présentation principale avec nom, titre, description et photo -->
+    <!-- =================================================================== -->
     <section id="home" class="hero">
         <div class="hero-content">
+            <!-- Bloc de texte de présentation (gauche sur desktop) -->
             <div class="hero-text">
                 <h1>Salut, je suis <span class="name">SALIMA ZRIBI</span></h1>
                 <p class="title"><i class="fas fa-shield-halved"></i> Étudiante en Cybersécurité et Réseaux | Administratrice Réseau</p>
                 <p>Étudiante en BUT Réseaux et Télécommunications, parcours Cybersécurité, dans le cadre d'une
                     co-diplomation entre l'ISI (Tunisie) et l'Université Sorbonne Paris Nord. Passionnée par la sécurité
                     des systèmes d'information.</p>
+                <!-- Boutons d'action principaux -->
                 <div class="hero-buttons">
                     <a href="#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Me Contacter</a>
                     <a href="resume/cv-salima-zribi-version-finale.pdf" download class="btn btn-resume"><i
@@ -1687,13 +1784,17 @@
                         class="btn btn-secondary"><i class="fab fa-linkedin"></i> LinkedIn</a>
                 </div>
             </div>
+            <!-- Photo de profil (droite sur desktop, en haut sur mobile) -->
             <div class="hero-image">
                 <img src="images/2627-ZRIBI-Sacha HERON.jpg" alt="Salima Zribi" class="profile-img">
             </div>
         </div>
     </section>
 
-    <!-- ACTIVITÉS ET DISTINCTIONS -->
+    <!-- =================================================================== -->
+    <!-- SECTION ACTIVITÉS ET DISTINCTIONS -->
+    <!-- Participation au Trophée EX MACHINA et compétitions de cybersécurité -->
+    <!-- =================================================================== -->
     <section id="distinctions">
         <h2>Activités et Distinctions</h2>
         <div class="timeline-item">
@@ -1717,9 +1818,13 @@
         </div>
     </section>
 
-    <!-- COMPÉTENCES -->
+    <!-- =================================================================== -->
+    <!-- SECTION COMPÉTENCES -->
+    <!-- Présentation des compétences techniques en réseaux et cybersécurité -->
+    <!-- =================================================================== -->
     <section id="skills">
         <h2>Compétences</h2>
+        <!-- Grille de cartes de compétences -->
         <div class="projects-grid">
             <div class="project-card fade-in">
                 <img src="images/ressec.jpg" alt="Réseaux & Sécurité" class="skill-image">
@@ -1784,9 +1889,13 @@
         </div>
     </section>
 
-    <!-- MES QUALITÉS -->
+    <!-- =================================================================== -->
+    <!-- SECTION MES QUALITÉS -->
+    <!-- Soft skills: Adaptabilité, Travail en équipe, Détermination -->
+    <!-- =================================================================== -->
     <section id="qualites">
         <h2>Mes Qualités</h2>
+        <!-- Grille de cartes de qualités avec icônes -->
         <div class="skills-grid">
             <div class="skill-card fade-in">
                 <div class="quality-icon">
@@ -1812,7 +1921,10 @@
         </div>
     </section>
 
-    <!-- FORMATION -->
+    <!-- =================================================================== -->
+    <!-- SECTION FORMATION -->
+    <!-- Parcours académique: BUT, Licence et Baccalauréat -->
+    <!-- =================================================================== -->
     <section id="formation">
         <h2>Formation</h2>
         <div class="timeline-item">
@@ -1823,7 +1935,6 @@
             <span class="date">2025-2026</span>
             <p class="location">Université Sorbonne Paris Nord - IUT de Villetaneuse</p>
             <p>Co-diplomation avec l'Institut Supérieur d'Informatique (ISI) - Double formation France-Tunisie</p>
-            <p><strong style="color: var(--accent-cyan);">4ème de la promotion</strong></p>
             <p><strong>Formation à dominante pratique :</strong> Travaux pratiques intensifs, projets concrets et mise en situation professionnelle pour développer des compétences opérationnelles en cybersécurité et réseaux</p>
             <ul style="color: var(--accent-cyan); margin-left: 2rem; padding-left: 1rem;">
                 <li>Réalisation d'attaques (eavesdropping, redirection DNS)</li>
@@ -1859,7 +1970,10 @@
         </div>
     </section>
 
-    <!-- EXPÉRIENCE -->
+    <!-- =================================================================== -->
+    <!-- SECTION EXPÉRIENCE PROFESSIONNELLE -->
+    <!-- Stages en réseaux et cybersécurité -->
+    <!-- =================================================================== -->
     <section id="experience">
         <h2>Expérience Professionnelle</h2>
         <div class="timeline-item">
@@ -1892,9 +2006,13 @@
         </div>
     </section>
 
-    <!-- PROJETS PROFESSIONNELS -->
+    <!-- =================================================================== -->
+    <!-- SECTION PROJETS PROFESSIONNELS -->
+    <!-- Projets réalisés en entreprise et durant les stages -->
+    <!-- =================================================================== -->
     <section id="professional-projects">
         <h2>Projets Professionnels</h2>
+        <!-- Grille de cartes de projets -->
         <div class="projects-grid">
             <div class="project-card fade-in">
                 <h3><i class="fas fa-fire-flame-curved"></i> Étude Comparative des Firewalls</h3>
@@ -1910,9 +2028,13 @@
         </div>
     </section>
 
-    <!-- CERTIFICATIONS -->
+    <!-- =================================================================== -->
+    <!-- SECTION CERTIFICATIONS -->
+    <!-- Certifications obtenues en cybersécurité (Fortinet, etc.) -->
+    <!-- =================================================================== -->
     <section id="certifications">
         <h2>Certifications</h2>
+        <!-- Liste de badges de certifications cliquables -->
         <div class="certifications">
             <div class="cert-badge" onclick="openCertModal('images/FCF.jpg')"><i class="fas fa-certificate"></i> Fortinet Certified Fundamentals in Cybersecurity
             </div>
@@ -1921,15 +2043,22 @@
         </div>
     </section>
 
-    <!-- MODALE CERTIFICATION -->
+    <!-- =================================================================== -->
+    <!-- MODALE DE VISUALISATION DES CERTIFICATIONS -->
+    <!-- Fenêtre popup pour afficher les certificats en grand -->
+    <!-- =================================================================== -->
     <div id="certModal" class="cert-modal" onclick="closeCertModal()">
         <div class="cert-modal-content" onclick="event.stopPropagation()">
             <span class="cert-modal-close" onclick="closeCertModal()">&times;</span>
+            <!-- Image du certificat (source définie dynamiquement via JavaScript) -->
             <img id="certImage" src="" alt="Certification">
         </div>
     </div>
 
-    <!-- ENGAGEMENT -->
+    <!-- =================================================================== -->
+    <!-- SECTION ENGAGEMENT & ACTIVITÉS ASSOCIATIVES -->
+    <!-- Clubs et organisations: Securinets, Enactus, AIESEC -->
+    <!-- =================================================================== -->
     <section>
         <h2>Activités & Engagement</h2>
         <div class="timeline-item">
@@ -1962,9 +2091,13 @@
         </div>
     </section>
 
-    <!-- PASSIONS -->
+    <!-- =================================================================== -->
+    <!-- SECTION PASSIONS & LOISIRS -->
+    <!-- Pâtisserie, Lecture, Sorties en groupe -->
+    <!-- =================================================================== -->
     <section id="passions">
         <h2>Passions & Loisirs</h2>
+        <!-- Grille de cartes de passions avec images -->
         <div class="projects-grid">
             <div class="project-card fade-in">
                 <img src="images/patisserie.jpeg" alt="Pâtisserie" class="skill-image">
@@ -1984,9 +2117,13 @@
         </div>
     </section>
 
-    <!-- LANGUES -->
+    <!-- =================================================================== -->
+    <!-- SECTION LANGUES -->
+    <!-- Niveau dans différentes langues avec barres de progression -->
+    <!-- =================================================================== -->
     <section id="langues">
         <h2>Langues</h2>
+        <!-- Grille 2x2 de cartes de langues -->
         <div class="langues-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 800px; margin: 0 auto;">
             <div class="skill-card fade-in">
                 <h3><i class="fas fa-language"></i> Arabe</h3>
@@ -2019,10 +2156,14 @@
         </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- =================================================================== -->
+    <!-- SECTION CONTACT -->
+    <!-- Informations de contact et formulaire de message -->
+    <!-- =================================================================== -->
     <section id="contact">
         <h2>Contact</h2>
         <div class="contact-container">
+            <!-- Colonne gauche: Informations de contact -->
             <div class="contact-info">
                 <div class="contact-item">
                     <i class="fas fa-envelope"></i> Email: <a href="mailto:zri.mima@gmail.com">zri.mima@gmail.com</a>
@@ -2074,155 +2215,210 @@
         </div>
     </section>
 
+    <!-- =================================================================== -->
     <!-- FOOTER -->
+    <!-- Pied de page avec copyright et informations -->
+    <!-- =================================================================== -->
     <footer>
         <p>© 2024 Salima Zribi - Étudiante en Cybersécurité | Networking & Cybersecurity Student @USPN</p>
         <p><i class="fas fa-globe"></i> Langues: Français (courant), Arabe (langue maternelle), Anglais (avancé), Turc
             (avancé)</p>
     </footer>
 
-    <!-- SCROLL TO TOP BUTTON -->
+    <!-- =================================================================== -->
+    <!-- BOUTON RETOUR EN HAUT -->
+    <!-- Bouton flottant pour remonter rapidement en haut de la page -->
+    <!-- =================================================================== -->
     <div class="scroll-to-top" id="scrollToTop"></div>
 
+    <!-- =================================================================== -->
+    <!-- SCRIPTS JAVASCRIPT -->
+    <!-- Code pour les interactions et animations du portfolio -->
+    <!-- =================================================================== -->
     <script>
-        // Hamburger menu toggle
+        /* =====================================================================
+         * MENU HAMBURGER (MOBILE)
+         * Gestion de l'ouverture/fermeture du menu sur mobile
+         * ===================================================================== */
+        
+        // Récupération des éléments du DOM
         const hamburger = document.getElementById('hamburger');
         const navMenu = document.getElementById('navMenu');
 
+        // Au clic sur le bouton hamburger
         hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');  // Active/désactive l'animation du bouton (croix)
+            navMenu.classList.toggle('active');    // Affiche/cache le menu
         });
 
-        // Close menu when clicking on a link
+        /* =====================================================================
+         * FERMETURE DU MENU AU CLIC SUR UN LIEN
+         * Le menu se ferme automatiquement après navigation
+         * ===================================================================== */
         document.querySelectorAll('nav ul a').forEach(link => {
             link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');  // Désactive l'animation
+                navMenu.classList.remove('active');    // Cache le menu
             });
         });
 
-        // Close menu when clicking outside
+        /* =====================================================================
+         * FERMETURE DU MENU AU CLIC À L'EXTÉRIEUR
+         * Le menu se ferme si l'utilisateur clique ailleurs
+         * ===================================================================== */
         document.addEventListener('click', (e) => {
+            // Si le clic n'est ni sur le bouton hamburger ni sur le menu
             if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
             }
         });
 
-        // Scroll to top functionality
+        /* =====================================================================
+         * BOUTON "RETOUR EN HAUT" (SCROLL TO TOP)
+         * Affiche un bouton flottant pour remonter en haut de la page
+         * ===================================================================== */
+        
         const scrollToTopBtn = document.getElementById('scrollToTop');
 
+        // Détecte le scroll de la page
         window.addEventListener('scroll', () => {
+            // Si on a scrollé plus de 300px vers le bas
             if (window.pageYOffset > 300) {
-                scrollToTopBtn.classList.add('visible');
+                scrollToTopBtn.classList.add('visible');  // Affiche le bouton
             } else {
-                scrollToTopBtn.classList.remove('visible');
+                scrollToTopBtn.classList.remove('visible');  // Cache le bouton
             }
         });
 
+        // Au clic sur le bouton: remonte en haut de la page
         scrollToTopBtn.addEventListener('click', () => {
             window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+                top: 0,              // Position 0 (haut de la page)
+                behavior: 'smooth'   // Défilement fluide
             });
         });
 
-        // Intersection Observer for fade-in animations
+        /* =====================================================================
+         * INTERSECTION OBSERVER - ANIMATIONS AU SCROLL
+         * Détecte quand les éléments deviennent visibles et les anime
+         * ===================================================================== */
+        
+        // Configuration de l'observer
         const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            threshold: 0.1,         // Déclenche quand 10% de l'élément est visible
+            rootMargin: '0px 0px -50px 0px'  // Marge pour déclencher l'animation plus tôt
         };
 
+        // Création de l'observer qui surveille les éléments
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
+                // Si l'élément devient visible
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
+                    entry.target.style.opacity = '1';           // Rend visible
+                    entry.target.style.transform = 'translateY(0)';  // Remet en position
                 }
             });
         }, observerOptions);
 
-        // Observe all fade-in elements
+        // Application de l'observer à tous les éléments avec la classe .fade-in
         document.querySelectorAll('.fade-in').forEach(el => {
             observer.observe(el);
         });
 
-        // Add smooth scroll to navigation links
+        /* =====================================================================
+         * SMOOTH SCROLL SUR LES LIENS DE NAVIGATION
+         * Défilement fluide vers les sections lors du clic sur le menu
+         * ===================================================================== */
         document.querySelectorAll('nav ul a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
+                e.preventDefault();  // Empêche le comportement par défaut
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                        behavior: 'smooth',  // Défilement fluide
+                        block: 'start'       // Aligne en haut de la vue
                     });
                 }
             });
         });
 
-        // Fonctions pour la modale de certification
+        /* =====================================================================
+         * MODALE DE CERTIFICATION
+         * Fonctions pour afficher/fermer les images de certificats en grand
+         * ===================================================================== */
+        
+        // Fonction pour ouvrir la modale avec une image
         function openCertModal(imageSrc) {
             const modal = document.getElementById('certModal');
             const certImage = document.getElementById('certImage');
-            certImage.src = imageSrc;
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Empêcher le scroll
+            certImage.src = imageSrc;           // Définit la source de l'image
+            modal.classList.add('active');      // Affiche la modale
+            document.body.style.overflow = 'hidden';  // Bloque le scroll de la page
         }
 
+        // Fonction pour fermer la modale
         function closeCertModal() {
             const modal = document.getElementById('certModal');
-            modal.classList.remove('active');
-            document.body.style.overflow = 'auto'; // Réactiver le scroll
+            modal.classList.remove('active');   // Cache la modale
+            document.body.style.overflow = 'auto';  // Réactive le scroll de la page
         }
 
-        // Fermer la modale avec la touche Échap
+        // Fermeture de la modale avec la touche Échap
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeCertModal();
+            if (e.key === 'Escape') {           // Si touche Échap pressée
+                closeCertModal();               // Ferme la modale
             }
         });
 
-        // Gestion du formulaire de contact
+        /* =====================================================================
+         * GESTION DU FORMULAIRE DE CONTACT
+         * Envoie les messages via l'API Web3Forms
+         * ===================================================================== */
+        
         const contactForm = document.getElementById('contactForm');
         const formMessage = document.getElementById('formMessage');
 
+        // Soumission du formulaire
         contactForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
+            e.preventDefault();  // Empêche le rechargement de la page
             
-            const formData = new FormData(contactForm);
+            const formData = new FormData(contactForm);  // Récupère les données du formulaire
             const submitButton = contactForm.querySelector('.form-submit');
-            const originalButtonText = submitButton.innerHTML;
+            const originalButtonText = submitButton.innerHTML;  // Sauvegarde du texte original
             
-            // Désactiver le bouton pendant l'envoi
+            // Désactive le bouton et affiche un spinner pendant l'envoi
             submitButton.disabled = true;
             submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
-            formMessage.style.display = 'none';
+            formMessage.style.display = 'none';  // Cache les messages précédents
             
             try {
+                // Envoi des données à l'API Web3Forms
                 const response = await fetch('https://api.web3forms.com/submit', {
                     method: 'POST',
                     body: formData
                 });
                 
-                const data = await response.json();
+                const data = await response.json();  // Récupère la réponse JSON
                 
+                // Si l'envoi a réussi
                 if (data.success) {
-                    formMessage.className = 'form-message success';
+                    formMessage.className = 'form-message success';  // Style de succès
                     formMessage.textContent = '✓ Message envoyé avec succès ! Je vous répondrai rapidement.';
-                    formMessage.style.display = 'block';
-                    contactForm.reset();
+                    formMessage.style.display = 'block';  // Affiche le message
+                    contactForm.reset();  // Réinitialise le formulaire
                 } else {
                     throw new Error('Erreur lors de l\'envoi');
                 }
             } catch (error) {
-                formMessage.className = 'form-message error';
+                // En cas d'erreur
+                formMessage.className = 'form-message error';  // Style d'erreur
                 formMessage.textContent = '✗ Erreur lors de l\'envoi. Veuillez réessayer ou me contacter directement par email.';
                 formMessage.style.display = 'block';
             } finally {
+                // Réactive le bouton dans tous les cas
                 submitButton.disabled = false;
-                submitButton.innerHTML = originalButtonText;
+                submitButton.innerHTML = originalButtonText;  // Restaure le texte original
             }
         });
     </script>
