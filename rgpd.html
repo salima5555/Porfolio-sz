@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politique RGPD - Salima Zribi</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* ===== VARIABLES DE COULEURS ===== */
+        :root {
+            --primary-purple: #8B5CF6;
+            --light-purple: #A78BFA;
+            --dark-purple: #6D28D9;
+            --bg-dark: #0a0a0a;
+            --bg-card: #1a1a1a;
+            --text-primary: #ffffff;
+            --text-secondary: #9ca3af;
+            --accent-cyan: #06b6d4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* ===== GRILLE DE FOND ===== */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(rgba(139, 92, 246, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(139, 92, 246, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 10% 20%, rgba(139, 92, 246, 0.08) 0%, transparent 30%),
+                radial-gradient(circle at 90% 80%, rgba(109, 40, 217, 0.06) 0%, transparent 30%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* ===== NAVIGATION SIMPLE ===== */
+        nav {
+            position: relative;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.6);
+            backdrop-filter: blur(20px);
+            padding: 0.8rem 1.5rem;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(139, 92, 246, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+        }
+
+        .nav-logo {
+            height: 40px;
+            width: auto;
+            z-index: 1001;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.3rem 0.7rem;
+        }
+
+        nav a:hover {
+            color: var(--primary-purple);
+        }
+
+        /* ===== CONTENU PRINCIPAL ===== */
+        main {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--primary-purple);
+            margin-bottom: 2rem;
+            text-align: center;
+            text-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--light-purple);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.8;
+        }
+
+        strong {
+            color: var(--primary-purple);
+        }
+
+        .rgpd-section {
+            background: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .rgpd-section:hover {
+            border-color: var(--primary-purple);
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-purple);
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            color: var(--light-purple);
+            transform: translateX(-5px);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(26, 26, 26, 0.95);
+            color: var(--text-secondary);
+            border-top: 1px solid rgba(139, 92, 246, 0.2);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            backdrop-filter: blur(10px);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            main {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ===== NAVIGATION ===== -->
+    <nav>
+        <a href="index.html">
+            <img src="images/logo.png" alt="Logo Salima Zribi" class="nav-logo">
+        </a>
+        <a href="index.html"><i class="fas fa-arrow-left"></i> Retour au portfolio</a>
+    </nav>
+
+    <!-- ===== CONTENU PRINCIPAL ===== -->
+    <main>
+        <h1><i class="fas fa-shield-alt"></i> Politique RGPD</h1>
+        
+        <div class="rgpd-section">
+            <h2>Introduction</h2>
+            <p>Cette page explique comment je collecte, traite et protège vos données personnelles conformément au Règlement Général sur la Protection des Données (RGPD) en vigueur dans l'Union Européenne.</p>
+        </div>
+
+        <div class="rgpd-section">
+            <h2>1. Responsable du traitement</h2>
+            <p><strong>Salima Zribi</strong> est le responsable du traitement de vos données personnelles.</p>
+            <p><strong>Contact :</strong> zri.mima@gmail.com</p>
+        </div>
+
+        <div class="rgpd-section">
+            <h2>2. Données collectées</h2>
+            <p>Via le formulaire de contact, je collecte les données suivantes :</p>
+            <ul>
+                <li><strong>Nom complet</strong> - pour vous identifier</li>
+                <li><strong>Adresse email</strong> - pour vous répondre</li>
+                <li><strong>Message</strong> - le contenu de votre demande</li>
+            </ul>
+            <p>Ces données sont <strong>obligatoires</strong> pour traiter votre demande de contact.</p>
+        </div>
+
+        <div class="rgpd-section">
+            <h2>3. Base légale du traitement</h2>
+            <p>Le traitement de vos données est basé sur :</p>
+            <ul>
+                <li><strong>Votre consentement explicite</strong> - via la case à cocher du formulaire</li>
+                <li><strong>L'exécution du contrat</strong> - pour répondre à votre message</li>
+                <li><strong>L'intérêt légitime</strong> - pour maintenir la communication</li>
+            </ul>
+        </div>
+
+        <div class="rgpd-section">
+            <h2>4. Durée de conservation</h2>
+            <p>Vos données personnelles seront conservées :</p>
+            <ul>
+                <li><strong>Pendant la durée nécessaire</strong> pour répondre à votre message</li>
+                <li><strong>Maximum 2 ans</strong> après le dernier contact, sauf obligation légale</li>
+                <li>Vous pouvez demander la suppression de vos données à tout moment</li>
+            </ul>
+        </div>
+
+        <div class="rgpd-section">
+            <h2>5. Vos droits</h2>
+            <p>Conformément au RGPD, vous disposez des droits suivants :</p>
+            <ul>
+                <li><strong>Droit d'accès</strong> - accéder à vos données</li>
+                <li><strong>Droit de rectification</strong> - corriger vos données</li>
+                <li><strong>Droit à l'oubli</strong> - demander la suppression de vos données</li>
+                <li><strong>Droit à la portabilité</strong> - recevoir vos données dans un format structuré</li>
+                <li><strong>Droit d'opposition</strong> - vous opposer au traitement</li>
+                <li><strong>Droit à la limitation</strong> - limiter le traitement</li>
+            </ul>
+            <p>Pour exercer l'un de ces droits, contactez-moi à : <strong>zri.mima@gmail.com</strong></p>
+        </div>
+
+        <div class="rgpd-section">
+            <h2>6. Partage des données</h2>
+            <p>Vos données <strong>ne seront pas partagées avec des tiers</strong>, sauf :</p>
+            <ul>
+                <li>Si requis par la loi</li>
+                <li>Avec les autorités compétentes en cas de demande légale</li>
+                <li>Avec le fournisseur de service de formulaire (Web3Forms) pour l'envoi du message</li>
+            </ul>
+        </div>
+
+        <div class="rgpd-section">
+            <h2>7. Sécurité des données</h2>
+            <p>Je mets en place des mesures de sécurité appropriées pour protéger vos données :</p>
+            <ul>
+                <li>Utilisation de HTTPS pour le chiffrement</li>
+                <li>Authentification sécurisée du service Web3Forms</li>
+                <li>Accès restreint aux données</li>
+            </ul>
+        </div>
+
+        <div class="rgpd-section">
+            <h2>8. Cookies</h2>
+            <p>Ce site n'utilise <strong>pas de cookies de suivi</strong>. Seuls les cookies essentiels au fonctionnement peuvent être utilisés.</p>
+        </div>
+
+        <div class="rgpd-section">
+            <h2>9. Modifications de cette politique</h2>
+            <p>Cette politique peut être modifiée à tout moment. Les modifications seront communiquées via cette page.</p>
+            <p><strong>Dernière mise à jour :</strong> 5 février 2026</p>
+        </div>
+
+        <div class="rgpd-section">
+            <h2>10. Contactez-moi</h2>
+            <p>Si vous avez des questions sur cette politique RGPD ou sur vos données, n'hésitez pas à me contacter :</p>
+            <p><strong>Email :</strong> zri.mima@gmail.com</p>
+            <p><strong>LinkedIn :</strong> salima-zribi</p>
+        </div>
+
+        <a href="index.html" class="back-button">
+            <i class="fas fa-arrow-left"></i> Retour au portfolio
+        </a>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>© 2024 Salima Zribi - Étudiante en Cybersécurité | Politique RGPD</p>
+    </footer>
+</body>
+
+</html>
